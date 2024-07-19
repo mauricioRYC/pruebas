@@ -2,8 +2,12 @@ import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
 
 export const Defuncion = sequelize.define("defuncion", {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    identificador: { type: DataTypes.TEXT },
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    identificador: { type: DataTypes.TEXT, unique: true },
     NA_NUMEROACTA: { type: DataTypes.TEXT },
     NA_ANIOREGISTRO: { type: DataTypes.TEXT },
     NA_TIPODOCUMENTO: { type: DataTypes.TEXT },

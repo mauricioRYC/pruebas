@@ -2,8 +2,12 @@ import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
 
 export const Nacimiento = sequelize.define("nacimiento", {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    identificador: { type: DataTypes.TEXT },
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    identificador: { type: DataTypes.TEXT, unique: true },
     ssa: { type: DataTypes.TEXT },
     curp: { type: DataTypes.TEXT },
     foja: { type: DataTypes.TEXT },

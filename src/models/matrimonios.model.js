@@ -2,8 +2,12 @@ import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
 
 export const Matrimonio = sequelize.define("matrimonio", {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    identificador: { type: DataTypes.TEXT },
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    identificador: { type: DataTypes.TEXT, unique: true },
     IND_CURP_EL: { type: DataTypes.TEXT },
     IND_CURP_ELLA: { type: DataTypes.TEXT },
     MAT_CRIP_EL: { type: DataTypes.TEXT },

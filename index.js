@@ -7,7 +7,7 @@ async function main() {
         await sequelizeD.sync({ force: false });
         console.log("Connection has been established successfully.");
         try {
-            await sequelize.sync({ force: false });
+            await sequelize.sync({ force: false, alter: true });
             console.log("Connection has been established succesfully tst");
         } catch (error) {
             console.log("ERROR EN TST");
